@@ -1,0 +1,65 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppThemeMaterial" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="SearchViewStyle" parent="@android:style/Widget.Holo.Light.AutoCompleteTextView">
+        <item name="android:textCursorDrawable">@drawable/cursor_search</item>
+    </style>
+
+    <style name="pop_window_anim_style">
+        <item name="android:windowEnterAnimation">@anim/anim_pop_show</item>
+        <item name="android:windowExitAnimation">@anim/anim_pop_dismiss</item>
+    </style>
+
+    <style name="activity_pop_window_anim_style">
+        <item name="android:windowEnterAnimation">@anim/anim_activity_pop_show</item>
+        <item name="android:windowExitAnimation">@anim/anim_activity_pop_dismiss</item>
+    </style>
+
+    <style name="activity_bottom_pop_window_anim_style">
+        <item name="android:windowEnterAnimation">@anim/anim_activity_bottom_pop_show</item>
+        <item name="android:windowExitAnimation">@anim/anim_activity_bottom_pop_dismiss</item>
+    </style>
+
+    <style name="activity_right_pop_window_anim_style">
+        <item name="android:windowEnterAnimation">@anim/anim_activity_right_pop_show</item>
+        <item name="android:windowExitAnimation">@anim/anim_activity_right_pop_dismiss</item>
+    </style>
+
+    <style name="activity_bottom_right_pop_window_anim_style">
+        <item name="android:windowEnterAnimation">@anim/anim_activity_bottom_right_pop_show</item>
+        <item name="android:windowExitAnimation">@anim/anim_activity_bottom_right_pop_dismiss</item>
+    </style>
+
+
+    <style name="toolbar_theme" parent="@style/ThemeOverlay.AppCompat.Light">
+        <!--修改toolbar的Title(大标题)颜色-->
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <!--修改toolbar的subtitle(小标题)颜色-->
+        <item name="subtitleTextColor">@android:color/white</item>
+        <!--修改toolbar的图标颜色.-->
+        <item name="colorControlNormal">@android:color/holo_red_dark</item>
+    </style>
+
+    <style name="popup_theme" parent="@style/ThemeOverlay.AppCompat.Light">
+        <!--设置背景-->
+        <item name="android:background">@android:color/white</item>
+        <!--设置字体颜色-->
+        <item name="android:textColor">@android:color/holo_red_dark</item>
+        <!--设置不覆盖锚点-->
+        <item name="overlapAnchor">false</item>
+    </style>
+
+</resources>

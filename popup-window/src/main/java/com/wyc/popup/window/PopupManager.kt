@@ -1,5 +1,6 @@
-package com.wyc.message.manager
+package com.wyc.popup.window
 
+import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -8,8 +9,8 @@ import android.widget.PopupWindow
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.wyc.message.App
-import com.wyc.message.R
+import com.wyc.popup.window.manager.KeyEventManager
+import com.wyc.popup.window.manager.PhoneManager
 
 object PopupManager {
 
@@ -20,23 +21,23 @@ object PopupManager {
     }
 
     @JvmStatic
-    fun createPopMenuList(width: Int, strArray: Array<String>, listener: OnDismissListener?): PopupWindowHelper {
-        return createPopMenuList(width, strArray.toMutableList(), listener, -1)
+    fun createPopMenuList(context: Context, width: Int, strArray: Array<String>, listener: OnDismissListener?): PopupWindowHelper {
+        return createPopMenuList(context, width, strArray.toMutableList(), listener, -1)
     }
 
     @JvmStatic
-    fun createPopMenuList(width: Int, menus: MutableList<String>, listener: OnDismissListener?, animationStyleId: Int): PopupWindowHelper {
-        val mContentView = LayoutInflater.from(App.getContext()).inflate(R.layout.layout_popup_window, null)
+    fun createPopMenuList(context: Context, width: Int, menus: MutableList<String>, listener: OnDismissListener?, animationStyleId: Int): PopupWindowHelper {
+        val mContentView = LayoutInflater.from(context).inflate(R.layout.layout_popup_window, null)
         val menuRecycler: RecyclerView? = mContentView.findViewById(R.id.pop_menu_recycler)
         menuRecycler?.setHasFixedSize(true)
-        menuRecycler?.layoutManager = object : LinearLayoutManager(App.getContext()) {
+        menuRecycler?.layoutManager = object : LinearLayoutManager(context) {
             override fun canScrollVertically(): Boolean {
                 return false
             }
         }
         val adapter = PopupMenuAdapter(menus)
         menuRecycler?.adapter = adapter
-        val popupWindowHelper = PopupWindowHelper.Builder(App.getContext())
+        val popupWindowHelper = PopupWindowHelper.Builder(context)
                 .setContentView(mContentView)
                 .setWidth(width)
                 .setAnimationStyle(animationStyleId)

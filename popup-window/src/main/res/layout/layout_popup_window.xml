@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_popup_window"
+    android:descendantFocusability="blocksDescendants"
+    android:overScrollMode="never">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pop_menu_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/pop_window_margin_start_end"
+        android:layout_marginTop="@dimen/pop_window_margin_top_bottom"
+        android:layout_marginEnd="@dimen/pop_window_margin_start_end"
+        android:layout_marginBottom="@dimen/pop_window_margin_top_bottom"
+        android:overScrollMode="never"
+        tools:listitem="@layout/item_popup_layout" />
+
+</RelativeLayout>

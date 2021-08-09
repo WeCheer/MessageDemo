@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.wyc.anim.utils.widget.ViewTouchAnimLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--
+       1、升级到material:1.1.0，可能会报 Error inflating class com.google.android.material.card.MaterialCardView
+       或 Error inflating class com.google.android.material.button.MaterialButton等错误，
+
+       2、因为material:1.1.0以后，部分Material Design组件需要MaterialComponents包下的theme才支持，
+       而新建项目默认使用的还是Theme.AppCompat包，我们手动改成Theme.MaterialComponents即可。
+
+       3、例如新建项目，默认使用的theme为：Theme.AppCompat.Light.DarkActionBar，
+       如果需要使用Material控件，则需要改成MaterialComponents包下的Light.DarkActionBar，
+       即：Theme.MaterialComponents.Light.DarkActionBar
+        <style name="AppThemeMaterial" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
+           <item name="colorPrimary">@color/colorPrimary</item>
+           <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+           <item name="colorAccent">@color/colorAccent</item>
+       </style>
+
+       4、有时候，并不希望项目使用MaterialComponents下的样式，
+       因为MaterialComponents样式的弹窗、Snackbar等会和AppCompat样式有很大不同，
+       随意修改可能达不到我们预期的效果，如果有使用AppCompat样式的需要，
+       也可以只修改目标控件下的theme值，以MaterialCardView为例，可以把MaterialCardView的theme值改成MaterialComponents
+       com.google.android.material.card.MaterialCardView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:theme="@style/Theme.MaterialComponents"/>
+
+       5、使用Bridge主题包，使用Bridge主题可以在不改变程序原有样式的情况下，使用Material Design组件
+       官方提供了以下Bridge主题包，可以根据需要做选择
+       Theme.MaterialComponents.Bridge
+       Theme.MaterialComponents.Light.Bridge
+       Theme.MaterialComponents.NoActionBar.Bridge
+       Theme.MaterialComponents.Light.NoActionBar.Bridge
+       Theme.MaterialComponents.Light.DarkActionBar.Bridge
+   -->
+
+    <!--
+        void setCheckable (boolean checkable)//设置是否可以选择
+        void setChecked (boolean checked)//选中的状态
+        void setCheckedIcon (Drawable checkedIcon)//选中图标的样式
+        void setCheckedIconResource (int id)//选中图标的样式
+        void setDragged (boolean dragged)//是否可拖动
+        void setRippleColor (ColorStateList rippleColor)//波纹效果的颜色
+        void setStrokeColor (int strokeColor)//卡片边的颜色
+        void setStrokeWidth (int strokeWidth)//卡片边的宽带
+        void toggle ()//控制checkable的开关
+    -->
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="1dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:checkedIcon="@mipmap/ic_launcher"
+        app:rippleColor="#00000000">
+
+        <TextView
+            android:id="@+id/text_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+    </com.google.android.material.card.MaterialCardView>
+
+</com.wyc.anim.utils.widget.ViewTouchAnimLayout>
